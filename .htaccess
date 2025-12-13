@@ -1,0 +1,18 @@
+Options All -Indexes
+ErrorDocument 404 https://bloa.test/error/404.php
+ErrorDocument 403 https://bola.test/error/403.php
+<IfModule mod_rewrite.c>
+RewriteEngine on
+#Redirect to Https
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteRule ^home index.php [NC,L]
+RewriteRule ^profile profile.php [NC,L]
+RewriteRule ^semua_berita semua_berita.php [NC,L]
+RewriteRule ^berita berita.php [NC,L]
+RewriteRule ^jadwal semua_jadwal.php [NC,L]
+RewriteRule ^liga liga.php [NC,L]
+RewriteRule ^club semua_club.php [NC,L]
+RewriteRule ^login login.php [NC,L]
+</IfModule>
